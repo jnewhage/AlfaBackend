@@ -227,6 +227,7 @@ router.delete('/cart/', function (req, res, next) {
     //THEN delete entry
 
     Data2.findOneAndRemove({ description: req.body.description }, { price: req.body.price }, (err) => {
+        console.log("Oi")
         if (err) return res.json({ success: false, error: err });
         return res.json({ success: true })
     })
